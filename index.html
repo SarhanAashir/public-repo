@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ObliqCloud — DevOps Consultancy & Digital Growth Agency</title>
+  <meta name="description" content="ObliqCloud is a full-stack digital agency: DevOps consultancy, cloud infrastructure, social media marketing, web engineering and brand growth — engineered to scale." />
+  <meta property="og:title" content="ObliqCloud — Engineering Growth at Every Angle" />
+  <meta property="og:description" content="DevOps consultancy, cloud infrastructure, social media marketing and brand growth under one roof." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://obliqcloud.com/" />
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236c5ce7'/%3E%3Cstop offset='1' stop-color='%2300d2ff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='10' y='10' width='80' height='80' rx='24' fill='url(%23g)' transform='rotate(8 50 50)'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__logo">Obliq<span>Cloud</span></div>
+    <div class="preloader__bar"><span id="preloaderBar"></span></div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Three.js canvas (fixed background) -->
+  <canvas id="webgl"></canvas>
+
+  <!-- Noise overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" data-cursor="hover">Obliq<span>Cloud</span></a>
+    <nav class="nav__links">
+      <a href="#services" data-cursor="hover">Services</a>
+      <a href="#process" data-cursor="hover">Process</a>
+      <a href="#work" data-cursor="hover">Results</a>
+      <a href="#about" data-cursor="hover">About</a>
+    </nav>
+    <a href="#contact" class="btn btn--small" data-cursor="hover">
+      <span>Start a Project</span>
+    </a>
+    <button class="nav__burger" id="burger" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#work">Results</a>
+    <a href="#about">About</a>
+    <a href="#contact">Start a Project</a>
+  </div>
+
+  <main id="top">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal"><span class="pulse-dot"></span> Available for new partnerships — 2026</p>
+        <h1 class="hero__title">
+          <span class="line"><span>Engineering</span></span>
+          <span class="line"><span class="gradient-text">Growth</span></span>
+          <span class="line"><span>at Every Angle.</span></span>
+        </h1>
+        <p class="hero__sub reveal">
+          ObliqCloud is a multi-disciplinary agency fusing <strong>DevOps consultancy</strong>,
+          <strong>cloud infrastructure</strong> and <strong>social-media marketing</strong> —
+          so your product ships faster and your brand grows louder.
+        </p>
+        <div class="hero__cta reveal">
+          <a href="#contact" class="btn" data-cursor="hover"><span>Book a Free Strategy Call</span></a>
+          <a href="#services" class="btn btn--ghost" data-cursor="hover"><span>Explore Services</span></a>
+        </div>
+      </div>
+      <div class="hero__scroll">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== Marquee ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>DevOps Consultancy</span><i>✦</i>
+        <span>Cloud Infrastructure</span><i>✦</i>
+        <span>Social Media Marketing</span><i>✦</i>
+        <span>CI/CD Pipelines</span><i>✦</i>
+        <span>Brand Strategy</span><i>✦</i>
+        <span>Kubernetes</span><i>✦</i>
+        <span>Performance Ads</span><i>✦</i>
+        <span>Web Engineering</span><i>✦</i>
+        <span>DevOps Consultancy</span><i>✦</i>
+        <span>Cloud Infrastructure</span><i>✦</i>
+        <span>Social Media Marketing</span><i>✦</i>
+        <span>CI/CD Pipelines</span><i>✦</i>
+        <span>Brand Strategy</span><i>✦</i>
+        <span>Kubernetes</span><i>✦</i>
+        <span>Performance Ads</span><i>✦</i>
+        <span>Web Engineering</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ===== About / Intro ===== -->
+    <section class="intro section" id="about">
+      <div class="container">
+        <p class="section__eyebrow reveal">01 — Who we are</p>
+        <h2 class="intro__statement split-reveal">
+          One agency. Two superpowers. We build the <em>infrastructure</em> that runs your
+          business and the <em>audience</em> that grows it — under one roof, with one
+          accountable team.
+        </h2>
+        <div class="intro__grid">
+          <div class="intro__card reveal">
+            <h3>Built by engineers</h3>
+            <p>Our roots are in production systems — pipelines, clusters and cloud bills we've tamed for startups and enterprises alike. We don't hand over slide decks; we ship working systems.</p>
+          </div>
+          <div class="intro__card reveal">
+            <h3>Driven by creatives</h3>
+            <p>Strategy means nothing if no one sees it. Our growth team turns technical excellence into content, campaigns and communities that compound month over month.</p>
+          </div>
+          <div class="intro__card reveal">
+            <h3>Measured by outcomes</h3>
+            <p>Deploy frequency, infrastructure cost, engagement rate, cost per acquisition. Every engagement starts with a metric and ends with it moving.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section class="services section" id="services">
+      <div class="container">
+        <p class="section__eyebrow reveal">02 — What we do</p>
+        <h2 class="section__title reveal">Services that <span class="gradient-text">compound</span></h2>
+
+        <div class="services__list">
+          <article class="service reveal" data-cursor="hover">
+            <div class="service__index">01</div>
+            <div class="service__body">
+              <h3>DevOps Consultancy</h3>
+              <p>CI/CD pipeline design, Kubernetes &amp; container orchestration, infrastructure as code, observability and incident response. We cut deploy times from days to minutes.</p>
+              <ul class="service__tags">
+                <li>CI/CD</li><li>Kubernetes</li><li>Terraform</li><li>SRE</li><li>GitOps</li>
+              </ul>
+            </div>
+            <div class="service__arrow">→</div>
+          </article>
+
+          <article class="service reveal" data-cursor="hover">
+            <div class="service__index">02</div>
+            <div class="service__body">
+              <h3>Cloud Infrastructure</h3>
+              <p>Architecture, migration and cost optimisation across AWS, Azure and GCP. Secure, autoscaling foundations that grow with your traffic — not your invoice.</p>
+              <ul class="service__tags">
+                <li>AWS</li><li>Azure</li><li>GCP</li><li>FinOps</li><li>Security</li>
+              </ul>
+            </div>
+            <div class="service__arrow">→</div>
+          </article>
+
+          <article class="service reveal" data-cursor="hover">
+            <div class="service__index">03</div>
+            <div class="service__body">
+              <h3>Social Media Marketing</h3>
+              <p>Full-funnel organic and paid social. Content strategy, creative production, community management and performance ads across Instagram, LinkedIn, TikTok and X.</p>
+              <ul class="service__tags">
+                <li>Strategy</li><li>Content</li><li>Paid Ads</li><li>Community</li><li>Analytics</li>
+              </ul>
+            </div>
+            <div class="service__arrow">→</div>
+          </article>
+
+          <article class="service reveal" data-cursor="hover">
+            <div class="service__index">04</div>
+            <div class="service__body">
+              <h3>Web Engineering</h3>
+              <p>High-performance websites and web apps — designed, built and deployed on infrastructure we manage end to end. Core Web Vitals in the green, always.</p>
+              <ul class="service__tags">
+                <li>Next.js</li><li>Headless CMS</li><li>E-commerce</li><li>Performance</li>
+              </ul>
+            </div>
+            <div class="service__arrow">→</div>
+          </article>
+
+          <article class="service reveal" data-cursor="hover">
+            <div class="service__index">05</div>
+            <div class="service__body">
+              <h3>Brand &amp; Content Studio</h3>
+              <p>Identity systems, motion design, short-form video and copy that gives technical companies a human voice. Built to be remembered, engineered to convert.</p>
+              <ul class="service__tags">
+                <li>Identity</li><li>Motion</li><li>Video</li><li>Copywriting</li>
+              </ul>
+            </div>
+            <div class="service__arrow">→</div>
+          </article>
+
+          <article class="service reveal" data-cursor="hover">
+            <div class="service__index">06</div>
+            <div class="service__body">
+              <h3>Data &amp; Growth Analytics</h3>
+              <p>Dashboards that connect infrastructure health to marketing performance. Attribution, experimentation and reporting your whole team can actually read.</p>
+              <ul class="service__tags">
+                <li>Attribution</li><li>A/B Testing</li><li>Dashboards</li><li>SEO</li>
+              </ul>
+            </div>
+            <div class="service__arrow">→</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Stats ===== -->
+    <section class="stats section" id="work">
+      <div class="container">
+        <p class="section__eyebrow reveal">03 — Proof, not promises</p>
+        <div class="stats__grid">
+          <div class="stat reveal">
+            <div class="stat__num"><span class="counter" data-target="120">0</span>+</div>
+            <p>Projects shipped across cloud, web &amp; growth</p>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num"><span class="counter" data-target="68">0</span>%</div>
+            <p>Average reduction in client cloud spend</p>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num"><span class="counter" data-target="4">0</span>x</div>
+            <p>Average increase in deploy frequency</p>
+          </div>
+          <div class="stat reveal">
+            <div class="stat__num"><span class="counter" data-target="32">0</span>M+</div>
+            <p>Organic impressions generated for clients</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Process ===== -->
+    <section class="process section" id="process">
+      <div class="container">
+        <p class="section__eyebrow reveal">04 — How we work</p>
+        <h2 class="section__title reveal">From audit to <span class="gradient-text">altitude</span></h2>
+        <div class="process__steps">
+          <div class="step reveal">
+            <span class="step__num">①</span>
+            <h3>Discover</h3>
+            <p>A deep audit of your stack, pipelines, channels and metrics. We find the bottlenecks before we touch anything.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step__num">②</span>
+            <h3>Design</h3>
+            <p>A roadmap with owners, timelines and target metrics — architecture diagrams for the engineers, content calendars for the marketers.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step__num">③</span>
+            <h3>Deploy</h3>
+            <p>We build in weekly sprints with full transparency. Pipelines go live, campaigns launch, dashboards light up.</p>
+          </div>
+          <div class="step reveal">
+            <span class="step__num">④</span>
+            <h3>Scale</h3>
+            <p>Continuous optimisation: cheaper infrastructure, faster releases, better-performing creative. Then we do it again.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Testimonials ===== -->
+    <section class="testimonials section">
+      <div class="container">
+        <p class="section__eyebrow reveal">05 — What partners say</p>
+        <div class="testimonials__grid">
+          <blockquote class="testimonial reveal">
+            <p>“ObliqCloud rebuilt our deployment pipeline and halved our AWS bill in the first quarter. Then their marketing team doubled our inbound leads. Same invoice, two transformations.”</p>
+            <footer>— CTO, Series-B SaaS company</footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <p>“The rare agency that speaks Kubernetes and TikTok fluently. Our engineers trust them and our brand has never looked better.”</p>
+            <footer>— Founder, D2C e-commerce brand</footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <p>“They treat our metrics like their own. Weekly reports we actually read, and numbers that keep moving in the right direction.”</p>
+            <footer>— Head of Growth, fintech startup</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA / Contact ===== -->
+    <section class="cta section" id="contact">
+      <div class="container">
+        <h2 class="cta__title split-reveal">Let's build something <em>unreasonably good</em>.</h2>
+        <p class="cta__sub reveal">Tell us about your stack, your audience, or both. We'll reply within one business day with honest next steps — no hard sell.</p>
+        <form class="cta__form reveal" action="mailto:hello@obliqcloud.com" method="post" enctype="text/plain">
+          <div class="cta__row">
+            <input type="text" name="name" placeholder="Your name" required data-cursor="hover" />
+            <input type="email" name="email" placeholder="Work email" required data-cursor="hover" />
+          </div>
+          <textarea name="message" rows="4" placeholder="What are you trying to build or grow?" required data-cursor="hover"></textarea>
+          <button type="submit" class="btn btn--full" data-cursor="hover"><span>Send Message →</span></button>
+        </form>
+        <a href="mailto:hello@obliqcloud.com" class="cta__email" data-cursor="hover">hello@obliqcloud.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="nav__logo">Obliq<span>Cloud</span></div>
+        <p>Engineering growth at every angle.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <a href="#services">DevOps Consultancy</a>
+        <a href="#services">Cloud Infrastructure</a>
+        <a href="#services">Social Media Marketing</a>
+        <a href="#services">Web Engineering</a>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer__col">
+        <h4>Social</h4>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://x.com" target="_blank" rel="noopener">X / Twitter</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 ObliqCloud. All rights reserved.</span>
+      <span>obliqcloud.com</span>
+    </div>
+  </footer>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./js/vendor/three.module.min.js"
+      }
+    }
+  </script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
