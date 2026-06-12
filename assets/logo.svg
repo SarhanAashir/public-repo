@@ -1,16 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <!-- Orme Energy swirl mark — replace this file with the original logo asset to use it site-wide -->
+  <!-- Orme Energy swirl mark, redrawn from the brand logo.
+       To use the original asset instead, overwrite assets/logo.png — the site references that file. -->
   <defs>
-    <linearGradient id="ormeGrad" x1="0%" y1="85%" x2="100%" y2="15%">
+    <linearGradient id="ormeGrad" x1="10%" y1="90%" x2="90%" y2="10%">
       <stop offset="0%" stop-color="#7e1b2e"/>
-      <stop offset="48%" stop-color="#c72c41"/>
-      <stop offset="100%" stop-color="#e8542a"/>
+      <stop offset="45%" stop-color="#c72c41"/>
+      <stop offset="100%" stop-color="#ef5b2d"/>
     </linearGradient>
   </defs>
-  <g fill="none" stroke="url(#ormeGrad)" stroke-linecap="round">
-    <path d="M 97 31 A 45 45 0 1 0 97 97" stroke-width="13"/>
-    <path d="M 86 47 A 27 27 0 1 0 86 81" stroke-width="12"/>
-    <circle cx="64" cy="64" r="11.5" stroke-width="11"/>
-    <path d="M 80 97 L 114 97" stroke-width="13"/>
+  <g fill="none" stroke="url(#ormeGrad)">
+    <path d="M 75.6 20.5 A 45 45 0 1 0 48.6 106.3" stroke-width="13" stroke-linecap="round"/>
+    <path d="M 78 39.8 A 28 28 0 1 0 50 88.2" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="64" cy="64" r="11" stroke-width="10.5"/>
+    <path d="M 77 93.5 C 90 98 103 98 116 95.5" stroke-width="13" stroke-linecap="butt"/>
   </g>
 </svg>
