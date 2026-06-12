@@ -1,21 +1,21 @@
 /* ===================================================================
    Ormee Energy — Solar solutions landing page
-   Dark "golden hour" theme: deep night navy + solar amber
+   Light theme: warm white + logo red/orange gradient accents
    =================================================================== */
 
 :root {
-  --bg: #070b14;
-  --bg-soft: #0c1220;
-  --surface: #111a2c;
-  --surface-2: #16213a;
-  --line: rgba(246, 183, 60, 0.14);
-  --line-soft: rgba(255, 255, 255, 0.08);
-  --text: #f4f1ea;
-  --text-dim: #a8b0c0;
-  --solar: #f6b73c;
-  --solar-deep: #e8842b;
-  --solar-glow: rgba(246, 183, 60, 0.35);
-  --sky: #6fb7ff;
+  --bg: #fdfbf9;
+  --bg-soft: #f7f2ee;
+  --surface: #ffffff;
+  --surface-2: #fbf6f2;
+  --line: rgba(199, 44, 65, 0.18);
+  --line-soft: rgba(31, 22, 25, 0.1);
+  --text: #221a1d;
+  --text-dim: #6e6266;
+  --brand: #c72c41;
+  --brand-deep: #a31d33;
+  --brand-orange: #e8542a;
+  --brand-glow: rgba(199, 44, 65, 0.28);
   --radius: 20px;
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -36,13 +36,13 @@ body {
   overflow-x: hidden;
 }
 
-::selection { background: var(--solar); color: #1a1206; }
+::selection { background: var(--brand); color: #fff; }
 
 h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.08; }
 h2 { font-size: clamp(2.1rem, 4.5vw, 3.4rem); letter-spacing: -0.01em; }
 h2 em, .hero__title-accent {
   font-style: italic;
-  background: linear-gradient(100deg, var(--solar) 10%, var(--solar-deep) 60%, #ffdf9e 110%);
+  background: linear-gradient(100deg, var(--brand-deep) 0%, var(--brand) 45%, var(--brand-orange) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -66,18 +66,18 @@ img, svg { display: block; max-width: 100%; }
   border: none;
 }
 .btn--solar {
-  background: linear-gradient(105deg, var(--solar), var(--solar-deep));
-  color: #221504;
-  box-shadow: 0 8px 30px -8px var(--solar-glow);
+  background: linear-gradient(105deg, var(--brand-deep), var(--brand) 50%, var(--brand-orange));
+  color: #fff;
+  box-shadow: 0 8px 30px -8px var(--brand-glow);
 }
-.btn--solar:hover { transform: translateY(-2px); box-shadow: 0 14px 40px -8px var(--solar-glow); }
+.btn--solar:hover { transform: translateY(-2px); box-shadow: 0 14px 40px -8px var(--brand-glow); }
 .btn--ghost {
   border: 1px solid var(--line-soft);
   color: var(--text);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(8px);
 }
-.btn--ghost:hover { border-color: var(--solar); color: var(--solar); transform: translateY(-2px); }
+.btn--ghost:hover { border-color: var(--brand); color: var(--brand); transform: translateY(-2px); }
 .btn--small { padding: 0.55rem 1.3rem; font-size: 0.85rem; }
 
 /* ---------- Nav ---------- */
@@ -88,7 +88,7 @@ img, svg { display: block; max-width: 100%; }
   transition: background 0.4s, box-shadow 0.4s, backdrop-filter 0.4s;
 }
 .nav.is-scrolled {
-  background: rgba(7, 11, 20, 0.82);
+  background: rgba(253, 251, 249, 0.85);
   backdrop-filter: blur(14px);
   box-shadow: 0 1px 0 var(--line-soft);
 }
@@ -103,12 +103,12 @@ img, svg { display: block; max-width: 100%; }
 .nav__logo { display: flex; align-items: center; gap: 0.65rem; font-weight: 700; font-size: 1.15rem; }
 .nav__logo-mark {
   width: 26px; height: 26px; border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #ffe9b3, var(--solar) 45%, var(--solar-deep));
-  box-shadow: 0 0 18px var(--solar-glow);
+  background: conic-gradient(from 210deg, var(--brand-deep), var(--brand) 40%, var(--brand-orange) 75%, var(--brand-deep));
+  box-shadow: 0 0 18px var(--brand-glow);
 }
-.nav__logo-text em { font-style: normal; color: var(--solar); }
+.nav__logo-text em { font-style: normal; color: var(--brand); }
 .nav__links { display: flex; align-items: center; gap: 1.9rem; font-size: 0.92rem; font-weight: 500; color: var(--text-dim); }
-.nav__links a:not(.btn):hover { color: var(--solar); }
+.nav__links a:not(.btn):hover { color: var(--brand); }
 .nav__toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
 .nav__toggle span { display: block; width: 24px; height: 2px; background: var(--text); margin: 6px 0; transition: transform 0.3s, opacity 0.3s; }
 
@@ -124,8 +124,8 @@ img, svg { display: block; max-width: 100%; }
 .hero__vignette {
   position: absolute; inset: 0; pointer-events: none;
   background:
-    linear-gradient(to top, var(--bg) 0%, transparent 28%),
-    radial-gradient(ellipse 120% 90% at 70% 40%, transparent 55%, rgba(7, 11, 20, 0.75) 100%);
+    linear-gradient(to top, var(--bg) 4%, rgba(253, 251, 249, 0.65) 34%, transparent 58%),
+    linear-gradient(100deg, rgba(253, 251, 249, 0.94) 0%, rgba(253, 251, 249, 0.6) 45%, transparent 72%);
 }
 .hero__content {
   position: relative;
@@ -141,9 +141,9 @@ img, svg { display: block; max-width: 100%; }
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--solar);
+  color: var(--brand);
   border: 1px solid var(--line);
-  background: rgba(246, 183, 60, 0.07);
+  background: rgba(199, 44, 65, 0.06);
   padding: 0.45rem 1rem;
   border-radius: 999px;
   margin-bottom: 1.6rem;
@@ -157,20 +157,21 @@ img, svg { display: block; max-width: 100%; }
   gap: clamp(1.8rem, 5vw, 4rem);
   flex-wrap: wrap;
 }
-.hero__stats dt { font-family: var(--font-display); font-size: clamp(1.9rem, 3.4vw, 2.7rem); color: var(--solar); }
+.hero__stats dt { font-family: var(--font-display); font-size: clamp(1.9rem, 3.4vw, 2.7rem); color: var(--brand); }
 .hero__stats dd { color: var(--text-dim); font-size: 0.88rem; margin-top: 0.15rem; }
 .hero__scroll {
   position: absolute; left: 50%; bottom: 2rem; transform: translateX(-50%);
   width: 26px; height: 44px; border: 1.5px solid var(--line-soft); border-radius: 14px;
   display: flex; justify-content: center; padding-top: 8px; z-index: 2;
+  background: rgba(255, 255, 255, 0.5);
 }
-.hero__scroll-dot { width: 4px; height: 8px; border-radius: 4px; background: var(--solar); animation: scrollDot 1.8s infinite var(--ease); }
+.hero__scroll-dot { width: 4px; height: 8px; border-radius: 4px; background: var(--brand); animation: scrollDot 1.8s infinite var(--ease); }
 @keyframes scrollDot { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(14px); opacity: 0; } 100% { opacity: 0; } }
 
 /* ---------- Marquee ---------- */
 .marquee {
   border-block: 1px solid var(--line);
-  background: linear-gradient(90deg, rgba(246, 183, 60, 0.05), rgba(232, 132, 43, 0.08), rgba(246, 183, 60, 0.05));
+  background: linear-gradient(90deg, rgba(199, 44, 65, 0.05), rgba(232, 84, 42, 0.08), rgba(199, 44, 65, 0.05));
   overflow: hidden;
   padding: 1rem 0;
 }
@@ -184,7 +185,7 @@ img, svg { display: block; max-width: 100%; }
   color: var(--text-dim);
   white-space: nowrap;
 }
-.marquee__track i { color: var(--solar); font-style: normal; }
+.marquee__track i { color: var(--brand); font-style: normal; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------- Sections ---------- */
@@ -192,33 +193,34 @@ img, svg { display: block; max-width: 100%; }
 .section__head { max-width: 720px; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .section__eyebrow {
   font-size: 0.8rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--solar); margin-bottom: 1rem;
+  color: var(--brand); margin-bottom: 1rem;
 }
 .section__lede { margin-top: 1.2rem; color: var(--text-dim); font-size: 1.05rem; }
 
 /* ---------- Solution cards ---------- */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
 .card {
-  background: linear-gradient(170deg, var(--surface), var(--bg-soft));
+  background: var(--surface);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius);
   padding: 2.2rem 1.9rem;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 10px 30px -20px rgba(34, 26, 29, 0.18);
   transition: transform 0.45s var(--ease), border-color 0.45s, box-shadow 0.45s;
 }
-.card:hover { transform: translateY(-6px); border-color: var(--line); box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.7), 0 0 40px -20px var(--solar-glow); }
-.card--feature { border-color: var(--line); background: linear-gradient(170deg, #1a2440, var(--surface)); position: relative; }
+.card:hover { transform: translateY(-6px); border-color: var(--line); box-shadow: 0 26px 50px -26px rgba(34, 26, 29, 0.3), 0 0 40px -24px var(--brand-glow); }
+.card--feature { border-color: var(--line); background: linear-gradient(170deg, #fff6f3, var(--surface)); position: relative; }
 .card--feature::before {
   content: "Most popular";
   position: absolute; top: 1.2rem; right: 1.2rem;
   font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: #221504; background: var(--solar); padding: 0.3rem 0.7rem; border-radius: 999px;
+  color: #fff; background: linear-gradient(105deg, var(--brand), var(--brand-orange)); padding: 0.3rem 0.7rem; border-radius: 999px;
 }
 .card__icon {
   width: 52px; height: 52px; border-radius: 14px;
-  display: grid; place-items: center; color: var(--solar);
-  background: rgba(246, 183, 60, 0.1); border: 1px solid var(--line);
+  display: grid; place-items: center; color: var(--brand);
+  background: rgba(199, 44, 65, 0.08); border: 1px solid var(--line);
   margin-bottom: 1.4rem;
 }
 .card__icon svg { width: 26px; height: 26px; }
@@ -226,8 +228,8 @@ img, svg { display: block; max-width: 100%; }
 .card p { color: var(--text-dim); font-size: 0.95rem; }
 .card ul { list-style: none; margin: 1.2rem 0 1.6rem; display: grid; gap: 0.55rem; font-size: 0.9rem; }
 .card ul li { padding-left: 1.4rem; position: relative; color: var(--text-dim); }
-.card ul li::before { content: "☀"; position: absolute; left: 0; color: var(--solar); font-size: 0.8rem; }
-.card__link { margin-top: auto; font-weight: 600; font-size: 0.92rem; color: var(--solar); transition: letter-spacing 0.3s var(--ease); }
+.card ul li::before { content: "☀"; position: absolute; left: 0; color: var(--brand-orange); font-size: 0.8rem; }
+.card__link { margin-top: auto; font-weight: 600; font-size: 0.92rem; color: var(--brand); transition: letter-spacing 0.3s var(--ease); }
 .card__link:hover { letter-spacing: 0.03em; }
 
 /* ---------- Impact ---------- */
@@ -235,18 +237,21 @@ img, svg { display: block; max-width: 100%; }
 .impact__glow {
   position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
   width: min(700px, 90vw); height: 400px; pointer-events: none;
-  background: radial-gradient(ellipse, rgba(246, 183, 60, 0.09), transparent 65%);
+  background: radial-gradient(ellipse, rgba(232, 84, 42, 0.08), transparent 65%);
 }
 .impact__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; position: relative; }
 .impact__stat {
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--line);
   padding-top: 1.6rem;
 }
 .impact__stat strong {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-  color: var(--solar);
+  background: linear-gradient(100deg, var(--brand-deep), var(--brand) 50%, var(--brand-orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   display: block;
   margin-bottom: 0.6rem;
 }
@@ -258,22 +263,23 @@ img, svg { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.4rem;
-  counter-reset: step;
 }
 .step {
-  background: var(--bg-soft);
+  background: var(--surface);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius);
   padding: 1.9rem 1.6rem;
+  box-shadow: 0 10px 30px -22px rgba(34, 26, 29, 0.2);
   transition: transform 0.45s var(--ease), border-color 0.45s;
 }
 .step:hover { transform: translateY(-5px); border-color: var(--line); }
 .step__num {
   font-family: var(--font-display);
   font-size: 1rem;
-  color: var(--solar);
+  color: var(--brand);
   display: inline-block;
   border: 1px solid var(--line);
+  background: rgba(199, 44, 65, 0.05);
   border-radius: 999px;
   padding: 0.25rem 0.8rem;
   margin-bottom: 1.1rem;
@@ -296,17 +302,17 @@ img, svg { display: block; max-width: 100%; }
 .project:hover { transform: translateY(-6px) scale(1.01); }
 .project::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(7, 11, 20, 0.92) 8%, rgba(7, 11, 20, 0.15) 60%);
+  background: linear-gradient(to top, rgba(255, 252, 250, 0.96) 12%, rgba(255, 252, 250, 0.1) 62%);
 }
-.project--a { background: radial-gradient(ellipse at 25% 20%, #2a3d6b, #0d1426 70%), var(--surface); }
-.project--b { background: radial-gradient(ellipse at 75% 15%, #6b4a16, #131120 65%); }
-.project--c { background: radial-gradient(ellipse at 30% 80%, #173a52, #0a0f1d 70%); }
-.project--d { background: radial-gradient(ellipse at 70% 75%, #4a2c5e, #0d1020 70%); }
+.project--a { background: radial-gradient(ellipse at 25% 20%, #f3c1ac, #fbe9df 70%); }
+.project--b { background: radial-gradient(ellipse at 75% 15%, #efa9a0, #fdeeea 65%); }
+.project--c { background: radial-gradient(ellipse at 30% 80%, #f4cdb2, #fcf0e6 70%); }
+.project--d { background: radial-gradient(ellipse at 70% 75%, #e9aab6, #fceef0 70%); }
 .project::before {
-  content: ""; position: absolute; inset: 0; opacity: 0.5;
+  content: ""; position: absolute; inset: 0; opacity: 0.6;
   background-image:
-    linear-gradient(rgba(246, 183, 60, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(246, 183, 60, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(199, 44, 65, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 44, 65, 0.14) 1px, transparent 1px);
   background-size: 44px 44px;
   transform: perspective(500px) rotateX(35deg) scale(1.6);
   transform-origin: bottom;
@@ -314,7 +320,7 @@ img, svg { display: block; max-width: 100%; }
 .project__meta { position: relative; z-index: 1; padding: 1.8rem; }
 .project__meta span {
   font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--solar);
+  color: var(--brand);
 }
 .project__meta h3 { font-size: 1.5rem; margin: 0.5rem 0 0.4rem; }
 .project__meta p { color: var(--text-dim); font-size: 0.92rem; max-width: 46ch; }
@@ -322,17 +328,18 @@ img, svg { display: block; max-width: 100%; }
 /* ---------- Testimonials ---------- */
 .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
 .quote {
-  background: var(--bg-soft);
+  background: var(--surface);
   border: 1px solid var(--line-soft);
   border-radius: var(--radius);
   padding: 2rem 1.8rem;
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
+  box-shadow: 0 10px 30px -22px rgba(34, 26, 29, 0.2);
 }
 .quote blockquote { font-family: var(--font-display); font-size: 1.12rem; line-height: 1.5; color: var(--text); }
 .quote figcaption { margin-top: auto; font-size: 0.88rem; }
-.quote figcaption strong { color: var(--solar); display: block; }
+.quote figcaption strong { color: var(--brand); display: block; }
 .quote figcaption span { color: var(--text-dim); }
 
 /* ---------- Contact ---------- */
@@ -341,22 +348,23 @@ img, svg { display: block; max-width: 100%; }
   grid-template-columns: 1.1fr 1fr;
   gap: clamp(2rem, 5vw, 4rem);
   background:
-    radial-gradient(ellipse at 0% 0%, rgba(246, 183, 60, 0.1), transparent 55%),
-    linear-gradient(160deg, var(--surface-2), var(--bg-soft));
+    radial-gradient(ellipse at 0% 0%, rgba(232, 84, 42, 0.09), transparent 55%),
+    linear-gradient(160deg, #fff7f3, var(--surface-2));
   border: 1px solid var(--line);
   border-radius: 28px;
   padding: clamp(2rem, 5vw, 4rem);
+  box-shadow: 0 24px 60px -34px rgba(163, 29, 51, 0.3);
 }
 .contact__copy p { color: var(--text-dim); margin-top: 1.2rem; max-width: 44ch; }
 .contact__channels { margin-top: 2rem; display: grid; gap: 0.6rem; font-weight: 600; }
-.contact__channels a { color: var(--solar); width: fit-content; }
+.contact__channels a { color: var(--brand); width: fit-content; }
 .contact__channels a:hover { text-decoration: underline; }
 .contact__form { display: grid; gap: 1rem; }
 .contact__form label { display: grid; gap: 0.4rem; font-size: 0.85rem; font-weight: 600; color: var(--text-dim); }
 .contact__form input,
 .contact__form select,
 .contact__form textarea {
-  background: rgba(7, 11, 20, 0.6);
+  background: #fff;
   border: 1px solid var(--line-soft);
   border-radius: 12px;
   padding: 0.85rem 1rem;
@@ -367,21 +375,21 @@ img, svg { display: block; max-width: 100%; }
 }
 .contact__form input:focus,
 .contact__form select:focus,
-.contact__form textarea:focus { outline: none; border-color: var(--solar); }
+.contact__form textarea:focus { outline: none; border-color: var(--brand); }
 .contact__form textarea { resize: vertical; }
 .contact__form .btn { justify-content: center; margin-top: 0.4rem; }
-.contact__success { color: var(--solar); font-weight: 600; font-size: 0.95rem; }
+.contact__success { color: var(--brand); font-weight: 600; font-size: 0.95rem; }
 
 /* ---------- Footer ---------- */
-.footer { border-top: 1px solid var(--line-soft); padding: 3rem 1.5rem 2rem; }
+.footer { border-top: 1px solid var(--line-soft); padding: 3rem 1.5rem 2rem; background: var(--bg-soft); }
 .footer__inner {
   max-width: 1200px; margin: 0 auto;
   display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
 }
 .footer__brand { display: flex; gap: 0.9rem; align-items: flex-start; color: var(--text-dim); font-size: 0.92rem; }
 .footer__nav { display: flex; gap: 1.6rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--text-dim); }
-.footer__nav a:hover { color: var(--solar); }
-.footer__legal { max-width: 1200px; margin: 2.5rem auto 0; color: #5a6376; font-size: 0.82rem; }
+.footer__nav a:hover { color: var(--brand); }
+.footer__legal { max-width: 1200px; margin: 2.5rem auto 0; color: #9a8d91; font-size: 0.82rem; }
 
 /* ---------- Reveal animation ---------- */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
@@ -401,7 +409,7 @@ img, svg { display: block; max-width: 100%; }
   .nav__links {
     position: fixed; inset: 0; z-index: -1;
     flex-direction: column; justify-content: center;
-    background: rgba(7, 11, 20, 0.97);
+    background: rgba(253, 251, 249, 0.98);
     font-size: 1.3rem; gap: 2rem;
     opacity: 0; pointer-events: none;
     transition: opacity 0.35s;

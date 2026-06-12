@@ -1,11 +1,11 @@
 # Ormee Energy — Solar Solutions Landing Page
 
-Award-winning-style landing page for **Ormee Energy** ([@ormeenergy](https://www.instagram.com/ormeenergy)) — a premium solar solutions company delivering residential, commercial and industrial installations.
+Landing page for **Ormee Energy** ([@ormeenergy](https://www.instagram.com/ormeenergy)) — a premium solar solutions company delivering residential, commercial and industrial installations.
 
 ## Highlights
 
-- **Three.js hero scene** — a golden-hour solar farm rendered in WebGL: a glowing sun with layered corona sprites over a custom gradient sky dome, an instanced field of 126 tilted solar panels that shimmer in a slow wave, drifting light motes, stars and pointer-driven camera parallax.
-- **"Golden hour" design system** — deep night-navy palette with solar-amber accents, Fraunces display serif paired with Inter, gradient text, glassmorphism buttons.
+- **Three.js hero scene** — a daylight solar farm rendered in WebGL: a red-orange sun with layered corona sprites over a custom gradient sky dome, an instanced field of 126 tilted solar panels that shimmer in a slow wave, drifting light motes and pointer-driven camera parallax.
+- **Light design system** — warm white palette with red/orange brand accents matching the Ormee logo, Fraunces display serif paired with Inter, gradient text.
 - **Scroll choreography** — staggered section reveals, animated stat counters, an infinite services marquee and a sticky blur navigation bar.
 - **Sections** — hero, solutions (residential / commercial / industrial), impact stats, 4-step process, project showcase, testimonials, contact form and footer.
 - **Responsive & accessible** — mobile menu, fluid typography via `clamp()`, semantic markup, and a static-frame fallback under `prefers-reduced-motion`. The 3D scene pauses when off-screen or when the tab is hidden, and degrades gracefully without WebGL.

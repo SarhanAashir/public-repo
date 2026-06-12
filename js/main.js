@@ -1,5 +1,5 @@
 /* ===================================================================
-   Ormee Energy — Three.js golden-hour solar farm + page interactions
+   Ormee Energy — Three.js daylight solar farm + page interactions
    =================================================================== */
 
 import * as THREE from "./vendor/three.module.min.js";
@@ -18,20 +18,20 @@ function initScene() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0x0b1020, 30, 110);
+  scene.fog = new THREE.Fog(0xf4ece5, 30, 120);
 
   const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 300);
   camera.position.set(0, 3.2, 14);
 
-  /* ---------- Sky dome: night navy fading to a warm horizon ---------- */
+  /* ---------- Sky dome: soft daylight blue fading to a warm horizon ---------- */
   const skyGeo = new THREE.SphereGeometry(150, 32, 20);
   const skyMat = new THREE.ShaderMaterial({
     side: THREE.BackSide,
     depthWrite: false,
     uniforms: {
-      topColor: { value: new THREE.Color(0x070b14) },
-      midColor: { value: new THREE.Color(0x16233f) },
-      horizonColor: { value: new THREE.Color(0x7a4a1c) },
+      topColor: { value: new THREE.Color(0xdce9f5) },
+      midColor: { value: new THREE.Color(0xf6e3d3) },
+      horizonColor: { value: new THREE.Color(0xf0b395) },
     },
     vertexShader: /* glsl */ `
       varying vec3 vPos;
@@ -60,7 +60,7 @@ function initScene() {
 
   const sun = new THREE.Mesh(
     new THREE.SphereGeometry(4.6, 48, 48),
-    new THREE.MeshBasicMaterial({ color: 0xffd98a })
+    new THREE.MeshBasicMaterial({ color: 0xe8542a })
   );
   sunGroup.add(sun);
 
@@ -80,31 +80,31 @@ function initScene() {
   }
 
   const glowNear = new THREE.Sprite(new THREE.SpriteMaterial({
-    map: glowTexture("rgba(255, 214, 130, 0.9)", "rgba(255, 160, 50, 0)"),
-    blending: THREE.AdditiveBlending,
+    map: glowTexture("rgba(232, 84, 42, 0.75)", "rgba(199, 44, 65, 0)"),
+    transparent: true,
     depthWrite: false,
   }));
   glowNear.scale.setScalar(26);
   sunGroup.add(glowNear);
 
   const glowFar = new THREE.Sprite(new THREE.SpriteMaterial({
-    map: glowTexture("rgba(246, 183, 60, 0.35)", "rgba(232, 132, 43, 0)"),
-    blending: THREE.AdditiveBlending,
+    map: glowTexture("rgba(232, 84, 42, 0.28)", "rgba(232, 84, 42, 0)"),
+    transparent: true,
     depthWrite: false,
   }));
   glowFar.scale.setScalar(70);
   sunGroup.add(glowFar);
 
   /* ---------- Lighting ---------- */
-  scene.add(new THREE.HemisphereLight(0x35508a, 0x0a0d16, 0.7));
-  const sunLight = new THREE.DirectionalLight(0xffb35c, 2.4);
+  scene.add(new THREE.HemisphereLight(0xfdf6ee, 0xc9b8aa, 1.5));
+  const sunLight = new THREE.DirectionalLight(0xff7a4a, 2.0);
   sunLight.position.copy(sunGroup.position);
   scene.add(sunLight);
 
   /* ---------- Ground plane ---------- */
   const ground = new THREE.Mesh(
     new THREE.PlaneGeometry(400, 400),
-    new THREE.MeshStandardMaterial({ color: 0x0b101d, roughness: 0.95, metalness: 0 })
+    new THREE.MeshStandardMaterial({ color: 0xe7ddd2, roughness: 0.95, metalness: 0 })
   );
   ground.rotation.x = -Math.PI / 2;
   scene.add(ground);
@@ -129,7 +129,7 @@ function initScene() {
   const panels = new THREE.InstancedMesh(panelGeo, panelMat, COUNT);
 
   const legGeo = new THREE.CylinderGeometry(0.05, 0.05, 1.0, 6);
-  const legMat = new THREE.MeshStandardMaterial({ color: 0x2a3142, roughness: 0.7, metalness: 0.6 });
+  const legMat = new THREE.MeshStandardMaterial({ color: 0x9aa0ab, roughness: 0.6, metalness: 0.7 });
   const legs = new THREE.InstancedMesh(legGeo, legMat, COUNT);
 
   const dummy = new THREE.Object3D();
@@ -168,37 +168,14 @@ function initScene() {
   const moteGeo = new THREE.BufferGeometry();
   moteGeo.setAttribute("position", new THREE.BufferAttribute(motePositions, 3));
   const motes = new THREE.Points(moteGeo, new THREE.PointsMaterial({
-    color: 0xf6b73c,
+    color: 0xc72c41,
     size: 0.14,
     transparent: true,
-    opacity: 0.55,
-    blending: THREE.AdditiveBlending,
+    opacity: 0.4,
     depthWrite: false,
     sizeAttenuation: true,
   }));
   scene.add(motes);
-
-  /* ---------- Stars ---------- */
-  const STARS = 400;
-  const starPositions = new Float32Array(STARS * 3);
-  for (let s = 0; s < STARS; s++) {
-    const theta = Math.random() * Math.PI * 2;
-    const phi = Math.acos(1 - Math.random() * 0.85); // bias toward upper sky
-    const radius = 130;
-    starPositions[s * 3] = radius * Math.sin(phi) * Math.cos(theta);
-    starPositions[s * 3 + 1] = Math.abs(radius * Math.cos(phi)) + 8;
-    starPositions[s * 3 + 2] = radius * Math.sin(phi) * Math.sin(theta);
-  }
-  const starGeo = new THREE.BufferGeometry();
-  starGeo.setAttribute("position", new THREE.BufferAttribute(starPositions, 3));
-  const stars = new THREE.Points(starGeo, new THREE.PointsMaterial({
-    color: 0xcdd8f0,
-    size: 0.5,
-    transparent: true,
-    opacity: 0.7,
-    depthWrite: false,
-  }));
-  scene.add(stars);
 
   /* ---------- Pointer parallax ---------- */
   const pointer = { x: 0, y: 0 };
