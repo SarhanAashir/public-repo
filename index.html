@@ -3,356 +3,289 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ObliqCloud — DevOps Consultancy & Digital Growth Agency</title>
-  <meta name="description" content="ObliqCloud is a full-stack digital agency: DevOps consultancy, cloud infrastructure, social media marketing, web engineering and brand growth — engineered to scale." />
-  <meta property="og:title" content="ObliqCloud — Engineering Growth at Every Angle" />
-  <meta property="og:description" content="DevOps consultancy, cloud infrastructure, social media marketing and brand growth under one roof." />
+  <title>Ormee Energy — Powering Tomorrow with the Sun</title>
+  <meta name="description" content="Ormee Energy designs and installs award-winning residential, commercial and industrial solar solutions. Clean power, engineered beautifully." />
+  <meta property="og:title" content="Ormee Energy — Harvest the Sun. Power Everything." />
+  <meta property="og:description" content="Premium solar solutions for homes, businesses and industry." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://obliqcloud.com/" />
-  <script>document.documentElement.classList.add("js");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  <meta name="theme-color" content="#f6f8fc" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231d4ed8'/%3E%3Cstop offset='1' stop-color='%230ea5e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='10' y='10' width='80' height='80' rx='24' fill='url(%23g)' transform='rotate(8 50 50)'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;circle cx='50' cy='50' r='38' fill='%23f6b73c'/&gt;&lt;/svg&gt;" />
 </head>
 <body>
 
-  <!-- Preloader -->
-  <div class="preloader" id="preloader">
-    <div class="preloader__logo">Obliq<span>Cloud</span></div>
-    <div class="preloader__bar"><span id="preloaderBar"></span></div>
-  </div>
-
-  <!-- Custom cursor -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-dot" id="cursorDot"></div>
-
-  <!-- Three.js canvas (fixed background) -->
-  <canvas id="webgl"></canvas>
-
-  <!-- Noise overlay -->
-  <div class="noise" aria-hidden="true"></div>
-
-  <!-- ===== Navigation ===== -->
+  <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
-    <a href="#top" class="nav__logo" data-cursor="hover">Obliq<span>Cloud</span></a>
-    <nav class="nav__links">
-      <a href="#services" data-cursor="hover">Services</a>
-      <a href="#process" data-cursor="hover">Process</a>
-      <a href="#work" data-cursor="hover">Results</a>
-      <a href="#about" data-cursor="hover">About</a>
-    </nav>
-    <a href="#contact" class="btn btn--small" data-cursor="hover">
-      <span>Start a Project</span>
-    </a>
-    <button class="nav__burger" id="burger" aria-label="Open menu">
-      <span></span><span></span>
-    </button>
+    <div class="nav__inner">
+      <a class="nav__logo" href="#top" aria-label="Ormee Energy home">
+        <span class="nav__logo-mark" aria-hidden="true"></span>
+        <span class="nav__logo-text">Ormee<em>Energy</em></span>
+      </a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="#solutions">Solutions</a>
+        <a href="#impact">Impact</a>
+        <a href="#process">Process</a>
+        <a href="#projects">Projects</a>
+        <a href="#testimonials">Stories</a>
+        <a href="#contact" class="btn btn--small btn--solar">Get a Quote</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#services">Services</a>
-    <a href="#process">Process</a>
-    <a href="#work">Results</a>
-    <a href="#about">About</a>
-    <a href="#contact">Start a Project</a>
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div class="hero__vignette" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">☀ Award-winning solar engineering</p>
+      <h1 class="hero__title reveal">
+        Harvest the sun.<br />
+        <span class="hero__title-accent">Power everything.</span>
+      </h1>
+      <p class="hero__sub reveal">
+        Ormee Energy designs, installs and maintains premium solar systems for homes,
+        businesses and industry — clean power that pays for itself, engineered beautifully.
+      </p>
+      <div class="hero__cta reveal">
+        <a href="#contact" class="btn btn--solar">Start your solar journey</a>
+        <a href="#solutions" class="btn btn--ghost">Explore solutions</a>
+      </div>
+      <dl class="hero__stats reveal">
+        <div><dt data-count="12.4" data-decimals="1">0</dt><dd>MW installed</dd></div>
+        <div><dt data-count="1800" data-suffix="+">0</dt><dd>Projects delivered</dd></div>
+        <div><dt data-count="98" data-suffix="%">0</dt><dd>Client satisfaction</dd></div>
+      </dl>
+    </div>
+
+    <a class="hero__scroll" href="#solutions" aria-label="Scroll to content">
+      <span class="hero__scroll-dot"></span>
+    </a>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="marqueeTrack">
+      <span>Residential Solar</span><i>✦</i>
+      <span>Commercial Rooftops</span><i>✦</i>
+      <span>Industrial Plants</span><i>✦</i>
+      <span>Battery Storage</span><i>✦</i>
+      <span>Net Metering</span><i>✦</i>
+      <span>EV Charging</span><i>✦</i>
+      <span>O&amp;M Services</span><i>✦</i>
+    </div>
   </div>
 
-  <main id="top">
-
-    <!-- ===== Hero ===== -->
-    <section class="hero" id="hero">
-      <div class="hero__content">
-        <p class="hero__eyebrow reveal"><span class="pulse-dot"></span> Available for new partnerships — 2026</p>
-        <h1 class="hero__title">
-          <span class="line"><span>Engineering</span></span>
-          <span class="line"><span class="gradient-text">Growth</span></span>
-          <span class="line"><span>at Every Angle.</span></span>
-        </h1>
-        <p class="hero__sub reveal">
-          ObliqCloud is a multi-disciplinary agency fusing <strong>DevOps consultancy</strong>,
-          <strong>cloud infrastructure</strong> and <strong>social-media marketing</strong> —
-          so your product ships faster and your brand grows louder.
-        </p>
-        <div class="hero__cta reveal">
-          <a href="#contact" class="btn" data-cursor="hover"><span>Book a Free Strategy Call</span></a>
-          <a href="#services" class="btn btn--ghost" data-cursor="hover"><span>Explore Services</span></a>
-        </div>
-      </div>
-      <div class="hero__scroll">
-        <span>Scroll</span>
-        <div class="hero__scroll-line"></div>
-      </div>
-    </section>
-
-    <!-- ===== Marquee ===== -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>DevOps Consultancy</span><i>✦</i>
-        <span>Cloud Infrastructure</span><i>✦</i>
-        <span>Social Media Marketing</span><i>✦</i>
-        <span>CI/CD Pipelines</span><i>✦</i>
-        <span>Brand Strategy</span><i>✦</i>
-        <span>Kubernetes</span><i>✦</i>
-        <span>Performance Ads</span><i>✦</i>
-        <span>Web Engineering</span><i>✦</i>
-        <span>DevOps Consultancy</span><i>✦</i>
-        <span>Cloud Infrastructure</span><i>✦</i>
-        <span>Social Media Marketing</span><i>✦</i>
-        <span>CI/CD Pipelines</span><i>✦</i>
-        <span>Brand Strategy</span><i>✦</i>
-        <span>Kubernetes</span><i>✦</i>
-        <span>Performance Ads</span><i>✦</i>
-        <span>Web Engineering</span><i>✦</i>
-      </div>
+  <!-- ============ SOLUTIONS ============ -->
+  <section class="section" id="solutions">
+    <div class="section__head reveal">
+      <p class="section__eyebrow">What we do</p>
+      <h2>Solar solutions for<br /><em>every scale</em></h2>
+      <p class="section__lede">
+        From a single rooftop to multi-megawatt plants, every Ormee system is custom-engineered
+        for maximum yield, longevity and return on investment.
+      </p>
     </div>
 
-    <!-- ===== About / Intro ===== -->
-    <section class="intro section" id="about">
-      <div class="container">
-        <p class="section__eyebrow reveal">01 — Who we are</p>
-        <h2 class="intro__statement split-reveal">
-          One agency. Two superpowers. We build the <em>infrastructure</em> that runs your
-          business and the <em>audience</em> that grows it — under one roof, with one
-          accountable team.
-        </h2>
-        <div class="intro__grid">
-          <div class="intro__card reveal">
-            <h3>Built by engineers</h3>
-            <p>Our roots are in production systems — pipelines, clusters and cloud bills we've tamed for startups and enterprises alike. We don't hand over slide decks; we ship working systems.</p>
-          </div>
-          <div class="intro__card reveal">
-            <h3>Driven by creatives</h3>
-            <p>Strategy means nothing if no one sees it. Our growth team turns technical excellence into content, campaigns and communities that compound month over month.</p>
-          </div>
-          <div class="intro__card reveal">
-            <h3>Measured by outcomes</h3>
-            <p>Deploy frequency, infrastructure cost, engagement rate, cost per acquisition. Every engagement starts with a metric and ends with it moving.</p>
-          </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-5h6v5"/></svg>
+        </div>
+        <h3>Residential</h3>
+        <p>Rooftop systems with hybrid inverters and battery backup — cut your bill up to 90% and stay powered through any outage.</p>
+        <ul>
+          <li>3–25 kW custom systems</li>
+          <li>Net-metering paperwork handled</li>
+          <li>25-year performance warranty</li>
+        </ul>
+        <a class="card__link" href="#contact">Get a home assessment →</a>
+      </article>
+
+      <article class="card card--feature reveal">
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h2M13 9h2M9 13h2M13 13h2M9 17h2M13 17h2"/></svg>
+        </div>
+        <h3>Commercial</h3>
+        <p>Turn idle rooftops and parking lots into revenue. We finance, build and operate systems that slash operating costs from day one.</p>
+        <ul>
+          <li>25 kW – 1 MW installations</li>
+          <li>CAPEX &amp; zero-investment OPEX models</li>
+          <li>Real-time generation monitoring</li>
+        </ul>
+        <a class="card__link" href="#contact">Talk to our team →</a>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20"/><path d="M4 20V9l5 3V9l5 3V8l6 4v8"/><path d="M12 4V2M6 5 5 3.5M18 5l1-1.5"/></svg>
+        </div>
+        <h3>Industrial &amp; Utility</h3>
+        <p>Ground-mount and captive solar plants engineered for harsh environments, with SCADA integration and guaranteed uptime.</p>
+        <ul>
+          <li>1 MW+ EPC delivery</li>
+          <li>Grid-code compliant design</li>
+          <li>Long-term O&amp;M contracts</li>
+        </ul>
+        <a class="card__link" href="#contact">Request a proposal →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT ============ -->
+  <section class="impact section" id="impact">
+    <div class="impact__glow" aria-hidden="true"></div>
+    <div class="section__head reveal">
+      <p class="section__eyebrow">Why solar, why now</p>
+      <h2>Numbers that<br /><em>speak sunlight</em></h2>
+    </div>
+    <div class="impact__grid">
+      <div class="impact__stat reveal">
+        <strong data-count="18600" data-suffix="+">0</strong>
+        <span>Tonnes of CO₂ offset by our installed fleet — the work of ~840,000 trees.</span>
+      </div>
+      <div class="impact__stat reveal">
+        <strong data-count="4">0</strong>
+        <span>Year average payback period. After that, every kilowatt-hour is pure savings.</span>
+      </div>
+      <div class="impact__stat reveal">
+        <strong data-count="25" data-suffix="yr">0</strong>
+        <span>Performance-guaranteed panel life with tier-1 modules and certified workmanship.</span>
+      </div>
+      <div class="impact__stat reveal">
+        <strong data-count="24" data-suffix="/7">0</strong>
+        <span>Remote monitoring and proactive maintenance across every system we commission.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="section" id="process">
+    <div class="section__head reveal">
+      <p class="section__eyebrow">How it works</p>
+      <h2>From sunlight to switch-on<br /><em>in four steps</em></h2>
+    </div>
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step__num">01</span>
+        <h3>Site survey &amp; design</h3>
+        <p>Drone mapping, shade analysis and load study. You get a 3D system design and a bankable yield report before spending anything.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__num">02</span>
+        <h3>Engineering &amp; approvals</h3>
+        <p>We handle structural calcs, net-metering applications and utility liaison end-to-end. Zero paperwork on your desk.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__num">03</span>
+        <h3>Installation</h3>
+        <p>Certified crews install in days, not weeks — tier-1 panels, premium inverters, storm-rated mounting and tidy cable runs.</p>
+      </li>
+      <li class="step reveal">
+        <span class="step__num">04</span>
+        <h3>Monitor &amp; maintain</h3>
+        <p>Live generation dashboards on your phone, automatic fault alerts and scheduled cleaning keep output at peak for decades.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="section__head reveal">
+      <p class="section__eyebrow">Recent work</p>
+      <h2>Projects under<br /><em>our sun</em></h2>
+    </div>
+    <div class="projects">
+      <article class="project project--a reveal">
+        <div class="project__meta"><span>Industrial · 2.4 MW</span><h3>Textile Mill Captive Plant</h3><p>Roof + ground hybrid array powering 70% of a 24/7 production line.</p></div>
+      </article>
+      <article class="project project--b reveal">
+        <div class="project__meta"><span>Commercial · 480 kW</span><h3>Logistics Park Rooftop</h3><p>Zero-investment OPEX model — the client pays only for the power produced.</p></div>
+      </article>
+      <article class="project project--c reveal">
+        <div class="project__meta"><span>Residential · 15 kW</span><h3>Hillside Villa, Off-grid Ready</h3><p>Hybrid system with 30 kWh storage riding through grid outages seamlessly.</p></div>
+      </article>
+      <article class="project project--d reveal">
+        <div class="project__meta"><span>Community · 120 kW</span><h3>School Solar Initiative</h3><p>Award-winning program putting savings back into classrooms and labs.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section testimonials" id="testimonials">
+    <div class="section__head reveal">
+      <p class="section__eyebrow">Client stories</p>
+      <h2>Trusted when<br /><em>it matters</em></h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote reveal">
+        <blockquote>“Our factory's energy bill dropped 62% in the first quarter. Ormee's monitoring dashboard is the first thing I check every morning.”</blockquote>
+        <figcaption><strong>Imran S.</strong><span>Operations Director, textile manufacturing</span></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <blockquote>“They handled everything — design, permits, net metering. We were generating power eleven days after signing.”</blockquote>
+        <figcaption><strong>Ayesha R.</strong><span>Homeowner, 10 kW hybrid system</span></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <blockquote>“The build quality is on another level. Three monsoons in, output is still tracking 2% above the guaranteed yield.”</blockquote>
+        <figcaption><strong>Daniel K.</strong><span>Facility Manager, logistics park</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ CTA / CONTACT ============ -->
+  <section class="contact section" id="contact">
+    <div class="contact__card reveal">
+      <div class="contact__copy">
+        <p class="section__eyebrow">Get started</p>
+        <h2>Your roof is an<br /><em>untapped power plant</em></h2>
+        <p>Tell us a little about your site and we'll send a free yield estimate and savings projection within 48 hours.</p>
+        <div class="contact__channels">
+          <a href="mailto:hello@ormeenergy.com">hello@ormeenergy.com</a>
+          <a href="https://www.instagram.com/ormeenergy" target="_blank" rel="noopener">@ormeenergy on Instagram</a>
         </div>
       </div>
-    </section>
+      <form class="contact__form" id="contactForm" novalidate>
+        <label>Name<input type="text" name="name" placeholder="Your name" required /></label>
+        <label>Email<input type="email" name="email" placeholder="you@example.com" required /></label>
+        <label>Project type
+          <select name="type">
+            <option>Residential rooftop</option>
+            <option>Commercial / business</option>
+            <option>Industrial / utility</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+        <label>Message<textarea name="message" rows="3" placeholder="Monthly bill, location, roof size…"></textarea></label>
+        <button type="submit" class="btn btn--solar">Request free estimate</button>
+        <p class="contact__success" id="formSuccess" hidden>☀ Thank you! We'll be in touch within 48 hours.</p>
+      </form>
+    </div>
+  </section>
 
-    <!-- ===== Services ===== -->
-    <section class="services section" id="services">
-      <div class="container">
-        <p class="section__eyebrow reveal">02 — What we do</p>
-        <h2 class="section__title reveal">Services that <span class="gradient-text">compound</span></h2>
-
-        <div class="services__list">
-          <article class="service reveal" data-cursor="hover">
-            <div class="service__index">01</div>
-            <div class="service__body">
-              <h3>DevOps Consultancy</h3>
-              <p>CI/CD pipeline design, Kubernetes &amp; container orchestration, infrastructure as code, observability and incident response. We cut deploy times from days to minutes.</p>
-              <ul class="service__tags">
-                <li>CI/CD</li><li>Kubernetes</li><li>Terraform</li><li>SRE</li><li>GitOps</li>
-              </ul>
-            </div>
-            <div class="service__arrow">→</div>
-          </article>
-
-          <article class="service reveal" data-cursor="hover">
-            <div class="service__index">02</div>
-            <div class="service__body">
-              <h3>Cloud Infrastructure</h3>
-              <p>Architecture, migration and cost optimisation across AWS, Azure and GCP. Secure, autoscaling foundations that grow with your traffic — not your invoice.</p>
-              <ul class="service__tags">
-                <li>AWS</li><li>Azure</li><li>GCP</li><li>FinOps</li><li>Security</li>
-              </ul>
-            </div>
-            <div class="service__arrow">→</div>
-          </article>
-
-          <article class="service reveal" data-cursor="hover">
-            <div class="service__index">03</div>
-            <div class="service__body">
-              <h3>Social Media Marketing</h3>
-              <p>Full-funnel organic and paid social. Content strategy, creative production, community management and performance ads across Instagram, LinkedIn, TikTok and X.</p>
-              <ul class="service__tags">
-                <li>Strategy</li><li>Content</li><li>Paid Ads</li><li>Community</li><li>Analytics</li>
-              </ul>
-            </div>
-            <div class="service__arrow">→</div>
-          </article>
-
-          <article class="service reveal" data-cursor="hover">
-            <div class="service__index">04</div>
-            <div class="service__body">
-              <h3>Web Engineering</h3>
-              <p>High-performance websites and web apps — designed, built and deployed on infrastructure we manage end to end. Core Web Vitals in the green, always.</p>
-              <ul class="service__tags">
-                <li>Next.js</li><li>Headless CMS</li><li>E-commerce</li><li>Performance</li>
-              </ul>
-            </div>
-            <div class="service__arrow">→</div>
-          </article>
-
-          <article class="service reveal" data-cursor="hover">
-            <div class="service__index">05</div>
-            <div class="service__body">
-              <h3>Brand &amp; Content Studio</h3>
-              <p>Identity systems, motion design, short-form video and copy that gives technical companies a human voice. Built to be remembered, engineered to convert.</p>
-              <ul class="service__tags">
-                <li>Identity</li><li>Motion</li><li>Video</li><li>Copywriting</li>
-              </ul>
-            </div>
-            <div class="service__arrow">→</div>
-          </article>
-
-          <article class="service reveal" data-cursor="hover">
-            <div class="service__index">06</div>
-            <div class="service__body">
-              <h3>Data &amp; Growth Analytics</h3>
-              <p>Dashboards that connect infrastructure health to marketing performance. Attribution, experimentation and reporting your whole team can actually read.</p>
-              <ul class="service__tags">
-                <li>Attribution</li><li>A/B Testing</li><li>Dashboards</li><li>SEO</li>
-              </ul>
-            </div>
-            <div class="service__arrow">→</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Stats ===== -->
-    <section class="stats section" id="work">
-      <div class="container">
-        <p class="section__eyebrow reveal">03 — Proof, not promises</p>
-        <div class="stats__grid">
-          <div class="stat reveal">
-            <div class="stat__num"><span class="counter" data-target="120">0</span>+</div>
-            <p>Projects shipped across cloud, web &amp; growth</p>
-          </div>
-          <div class="stat reveal">
-            <div class="stat__num"><span class="counter" data-target="68">0</span>%</div>
-            <p>Average reduction in client cloud spend</p>
-          </div>
-          <div class="stat reveal">
-            <div class="stat__num"><span class="counter" data-target="4">0</span>x</div>
-            <p>Average increase in deploy frequency</p>
-          </div>
-          <div class="stat reveal">
-            <div class="stat__num"><span class="counter" data-target="32">0</span>M+</div>
-            <p>Organic impressions generated for clients</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Process ===== -->
-    <section class="process section" id="process">
-      <div class="container">
-        <p class="section__eyebrow reveal">04 — How we work</p>
-        <h2 class="section__title reveal">From audit to <span class="gradient-text">altitude</span></h2>
-        <div class="process__steps">
-          <div class="step reveal">
-            <span class="step__num">①</span>
-            <h3>Discover</h3>
-            <p>A deep audit of your stack, pipelines, channels and metrics. We find the bottlenecks before we touch anything.</p>
-          </div>
-          <div class="step reveal">
-            <span class="step__num">②</span>
-            <h3>Design</h3>
-            <p>A roadmap with owners, timelines and target metrics — architecture diagrams for the engineers, content calendars for the marketers.</p>
-          </div>
-          <div class="step reveal">
-            <span class="step__num">③</span>
-            <h3>Deploy</h3>
-            <p>We build in weekly sprints with full transparency. Pipelines go live, campaigns launch, dashboards light up.</p>
-          </div>
-          <div class="step reveal">
-            <span class="step__num">④</span>
-            <h3>Scale</h3>
-            <p>Continuous optimisation: cheaper infrastructure, faster releases, better-performing creative. Then we do it again.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Testimonials ===== -->
-    <section class="testimonials section">
-      <div class="container">
-        <p class="section__eyebrow reveal">05 — What partners say</p>
-        <div class="testimonials__grid">
-          <blockquote class="testimonial reveal">
-            <p>“ObliqCloud rebuilt our deployment pipeline and halved our AWS bill in the first quarter. Then their marketing team doubled our inbound leads. Same invoice, two transformations.”</p>
-            <footer>— CTO, Series-B SaaS company</footer>
-          </blockquote>
-          <blockquote class="testimonial reveal">
-            <p>“The rare agency that speaks Kubernetes and TikTok fluently. Our engineers trust them and our brand has never looked better.”</p>
-            <footer>— Founder, D2C e-commerce brand</footer>
-          </blockquote>
-          <blockquote class="testimonial reveal">
-            <p>“They treat our metrics like their own. Weekly reports we actually read, and numbers that keep moving in the right direction.”</p>
-            <footer>— Head of Growth, fintech startup</footer>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CTA / Contact ===== -->
-    <section class="cta section" id="contact">
-      <div class="container">
-        <h2 class="cta__title split-reveal">Let's build something <em>unreasonably good</em>.</h2>
-        <p class="cta__sub reveal">Tell us about your stack, your audience, or both. We'll reply within one business day with honest next steps — no hard sell.</p>
-        <form class="cta__form reveal" action="mailto:hello@obliqcloud.com" method="post" enctype="text/plain">
-          <div class="cta__row">
-            <input type="text" name="name" placeholder="Your name" required data-cursor="hover" />
-            <input type="email" name="email" placeholder="Work email" required data-cursor="hover" />
-          </div>
-          <textarea name="message" rows="4" placeholder="What are you trying to build or grow?" required data-cursor="hover"></textarea>
-          <button type="submit" class="btn btn--full" data-cursor="hover"><span>Send Message →</span></button>
-        </form>
-        <a href="mailto:hello@obliqcloud.com" class="cta__email" data-cursor="hover">hello@obliqcloud.com</a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ===== Footer ===== -->
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <div class="container footer__inner">
+    <div class="footer__inner">
       <div class="footer__brand">
-        <div class="nav__logo">Obliq<span>Cloud</span></div>
-        <p>Engineering growth at every angle.</p>
+        <span class="nav__logo-mark" aria-hidden="true"></span>
+        <p>Ormee Energy — premium solar solutions,<br />engineered for decades of sunshine.</p>
       </div>
-      <div class="footer__col">
-        <h4>Services</h4>
-        <a href="#services">DevOps Consultancy</a>
-        <a href="#services">Cloud Infrastructure</a>
-        <a href="#services">Social Media Marketing</a>
-        <a href="#services">Web Engineering</a>
-      </div>
-      <div class="footer__col">
-        <h4>Company</h4>
-        <a href="#about">About</a>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#solutions">Solutions</a>
         <a href="#process">Process</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-      </div>
-      <div class="footer__col">
-        <h4>Social</h4>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://x.com" target="_blank" rel="noopener">X / Twitter</a>
-      </div>
+        <a href="https://www.instagram.com/ormeenergy" target="_blank" rel="noopener">Instagram</a>
+      </nav>
     </div>
-    <div class="footer__bottom">
-      <span>© 2026 ObliqCloud. All rights reserved.</span>
-      <span>obliqcloud.com</span>
-    </div>
+    <p class="footer__legal">© <span id="year"></span> Ormee Energy. All rights reserved.</p>
   </footer>
 
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "./js/vendor/three.module.min.js"
-      }
-    }
-  </script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
