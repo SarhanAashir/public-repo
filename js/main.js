@@ -1,5 +1,5 @@
 /* ===================================================================
-   Ormee Energy — Three.js daylight solar farm + page interactions
+   Orme Energy — Three.js daylight solar farm + page interactions
    =================================================================== */
 
 import * as THREE from "./vendor/three.module.min.js";

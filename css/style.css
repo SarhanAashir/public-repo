@@ -1,5 +1,5 @@
 /* ===================================================================
-   Ormee Energy — Solar solutions landing page
+   Orme Energy — Solar solutions landing page
    Light theme: warm white + logo red/orange gradient accents
    =================================================================== */
 
@@ -102,9 +102,8 @@ img, svg { display: block; max-width: 100%; }
 }
 .nav__logo { display: flex; align-items: center; gap: 0.65rem; font-weight: 700; font-size: 1.15rem; }
 .nav__logo-mark {
-  width: 26px; height: 26px; border-radius: 50%;
-  background: conic-gradient(from 210deg, var(--brand-deep), var(--brand) 40%, var(--brand-orange) 75%, var(--brand-deep));
-  box-shadow: 0 0 18px var(--brand-glow);
+  width: 30px; height: 30px;
+  filter: drop-shadow(0 2px 8px var(--brand-glow));
 }
 .nav__logo-text em { font-style: normal; color: var(--brand); }
 .nav__links { display: flex; align-items: center; gap: 1.9rem; font-size: 0.92rem; font-weight: 500; color: var(--text-dim); }
@@ -287,6 +286,39 @@ img, svg { display: block; max-width: 100%; }
 .step h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
 .step p { color: var(--text-dim); font-size: 0.9rem; }
 
+/* ---------- Partners ---------- */
+.partners__grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+}
+.partner {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 1.7rem 1.5rem;
+  text-align: center;
+  display: grid;
+  gap: 0.25rem;
+  box-shadow: 0 10px 30px -22px rgba(34, 26, 29, 0.2);
+  transition: transform 0.45s var(--ease), border-color 0.45s, box-shadow 0.45s;
+}
+.partner:hover { transform: translateY(-5px); border-color: var(--line); box-shadow: 0 20px 40px -24px rgba(34, 26, 29, 0.28), 0 0 36px -22px var(--brand-glow); }
+.partner strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: 0.01em;
+}
+.partner span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
 /* ---------- Projects ---------- */
 .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
 .project {
@@ -398,13 +430,14 @@ img, svg { display: block; max-width: 100%; }
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
   .cards, .quotes { grid-template-columns: 1fr 1fr; }
-  .steps { grid-template-columns: 1fr 1fr; }
+  .steps, .partners__grid { grid-template-columns: 1fr 1fr; }
   .impact__grid { grid-template-columns: 1fr 1fr; }
   .contact__card { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 680px) {
   .cards, .quotes, .steps, .impact__grid, .projects { grid-template-columns: 1fr; }
+  .partners__grid { grid-template-columns: 1fr 1fr; gap: 0.9rem; }
   .nav__toggle { display: block; }
   .nav__links {
     position: fixed; inset: 0; z-index: -1;
